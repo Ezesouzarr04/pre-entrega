@@ -1,11 +1,26 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
-{% block titulo %}
+{% block title %}
     <h1>Página inicial</h1>
-{% endblock titulo %}
+{% endblock title %}
 
-{% block contenido %}
-    <div>
-        <a href="{% url 'Vehiculo:index' %}">Ir a Combi/Vehiculo</a>
+{% block body_title %}
+    Inicio
+{% endblock body_title %}
+
+{% block content %}
+    <!-- Page Content-->
+    <div class="container px-4 px-lg-5">
+        <!-- Heading Row-->
+        <div class="row gx-4 gx-lg-5 align-items-center my-5">
+            <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0"
+                    src="{% static 'core/img/combi.webp' %}" alt="..." /></div>
+            <div class="col-lg-5">
+                <h1 class="font-weight-light">Combis Escolares</h1>
+                <p>En esta página podrás ver las combis que están disponibles para realizar traslados
+                    de todas las escuelas que se encuentren en la zona de Ezeiza-Canning.</p>
+            </div>
+        </div>
     </div>
-{% endblock contenido %}
+{% endblock content %}
