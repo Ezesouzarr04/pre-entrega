@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Asignación de combis
+{% endblock title %}
+
+{% block body_title %}
+    Asignación de combis: Vista en Detalle
+{% endblock body_title %}
+
+{% block content %}
+    <ul>
+        <li>Nombre: {{ Vehiculo.nombre }}</li>
+        <li>Combi: {{ Vehiculo.combi }}</li>
+        <li>Conductor: {{ Vehiculo.conductor }}</li>
+        <li>Pasajeros:</li>  
+            <ul>  
+                {% for pasajero in Vehiculo.pasajero.all %}  
+                    <li>{{ pasajero }}</li>  
+                {% endfor %}  
+            </ul>
+
+    </ul>
+    <div>
+        <a href="{% url 'Vehiculo:turno_de_recorrido_list' %}">Volver</a>
+    </div>
+{% endblock content %}
