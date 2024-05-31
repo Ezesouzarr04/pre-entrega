@@ -1,12 +1,15 @@
 {% extends 'core/base.html' %}
 
-{% block titulo %}
-    <h1>Turnos de Recorridos</h1>
-{% endblock titulo %}
+{% block title %}
+    Vehículo
+{% endblock title %}
 
-{% block contenido %}
-    {% for Tuno_de_recorrido in TurnosDeRecorridos %}
-        <h2>{{ Tuno_de_recorrido.nombre }} | {{ Tuno_de_recorrido.combi }} | {{ Tuno_de_recorrido.conductor }}</h2>
-        <p>{{ Tuno_de_recorrido.pasajero }}</p>
-    {% endfor %}
-{% endblock contenido %}
+{% block body_title %}
+    App Vehículo
+{% endblock body_title %}
+
+{% block content %}
+    <div>
+        <a href="{% url 'Vehiculo:turno_list' %}">Lista de combis, pasajeros y conductores</a>
+    </div>
+{% endblock content %}

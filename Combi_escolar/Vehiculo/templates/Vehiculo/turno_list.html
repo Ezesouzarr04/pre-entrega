@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Vehículo | Vehículo: listado
+{% endblock title %}
+
+{% block body_title %}
+    Vehículo: Lista de combis, pasajeros y conductores
+{% endblock body_title %}
+
+{% block content %}
+    {% for turno in turnos %}
+        <ul>
+            <li><h3>{{ Turno }}</h3></li>
+            <p>Nombre: {{ Turno.nombre }}</p>
+            <p>Combi: {{ Turno.combi }}</p>
+            <p>Conductor: {{ Turno.conductor }}</p>
+            <p>Pasajero: {{ Turno.pasajero }}</p>
+            <p></p>
+        </ul>
+    {% endfor %}
+{% endblock content %}

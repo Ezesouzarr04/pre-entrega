@@ -22,7 +22,7 @@ class Conductor(models.Model):
         return self.nombre
 
 
-class Turno_de_recorrido(models.Model):
+class Turno(models.Model):
     nombre = models.PositiveIntegerField(unique=True)
     combi = models.ForeignKey(Combi, on_delete=models.SET_NULL, null=True, blank=True)
     conductor = models.ForeignKey(Conductor, on_delete=models.SET_NULL, null=True, blank=True)
