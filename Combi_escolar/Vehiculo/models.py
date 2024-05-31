@@ -22,8 +22,11 @@ class Conductor(models.Model):
         return self.nombre
 
 
-class Turno(models.Model):
+class Turno_de_recorrido(models.Model):
     nombre = models.PositiveIntegerField(unique=True)
     combi = models.ForeignKey(Combi, on_delete=models.SET_NULL, null=True, blank=True)
     conductor = models.ForeignKey(Conductor, on_delete=models.SET_NULL, null=True, blank=True)
     pasajero = models.ManyToManyField(Pasajero)
+
+    def __str__(self):
+        return self.nombre

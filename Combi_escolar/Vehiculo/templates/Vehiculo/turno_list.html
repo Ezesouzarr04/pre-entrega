@@ -9,14 +9,20 @@
 {% endblock body_title %}
 
 {% block content %}
-    {% for turno in turnos %}
-        <ul>
-            <li><h3>{{ Turno }}</h3></li>
-            <p>Nombre: {{ Turno.nombre }}</p>
-            <p>Combi: {{ Turno.combi }}</p>
-            <p>Conductor: {{ Turno.conductor }}</p>
-            <p>Pasajero: {{ Turno.pasajero }}</p>
-            <p></p>
-        </ul>
-    {% endfor %}
+
+{% if Turno_de_recorrido %}
+    <p>"Hay datos"</p>
+{% else %}
+    <p>"No hay registro"</p>
+{% endif %}
+
+{% for turno in Turno_de_recorrido %}
+    <ul>
+        <li><h3>{{ turno.nombre }}</h3></li>
+        <p>Nombre: {{ turno.nombre }}</p>
+        <p>Combi: {{ turno.combi }}</p>
+        <p>Conductor: {{ turno.conductor }}</p>
+        <p>Pasajero: {{ turno.pasajero }}</p>
+    </ul>
+{% endfor %}
 {% endblock content %}
