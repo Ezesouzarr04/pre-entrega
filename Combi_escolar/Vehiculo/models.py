@@ -29,4 +29,4 @@ class Turno_de_recorrido(models.Model):
     pasajero = models.ManyToManyField(Pasajero)
 
     def __str__(self):
-        return self.nombre
+        return str(self.nombre)

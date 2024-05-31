@@ -1,15 +1,21 @@
-{% extends 'core/base.html' %}
-
-{% block title %}
-    Vehículo
-{% endblock title %}
-
-{% block body_title %}
-    App Vehículo
-{% endblock body_title %}
-
-{% block content %}
-    <div>
-        <a href="{% url 'Vehiculo:turno_list' %}">Lista de combis, pasajeros y conductores</a>
-    </div>
-{% endblock content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Turnos</title>
+</head>
+<body>
+    {% for turno in turnos %}
+        <ul>
+            <li><h3>{{ turno.nombre }}</h3></li>
+            <p>Nombre: {{ turno.nombre }}</p>
+            <p>Combi: {{ turno.combi }}</p>
+            <p>Conductor: {{ turno.conductor }}</p>
+            <p>Pasajero: 
+                {% for p in turno.pasajero.all %}
+                    {{ p.nombre }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+        </ul>
+    {% endfor %}
+</body>
+</html>
