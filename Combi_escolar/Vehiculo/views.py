@@ -25,7 +25,7 @@ def turno_create(request):
         form = Turno_de_recorridoForm(request.POST)  
         if form.is_valid():  
             form.save()  
-            messages.success(request, "Record created successfully.")  
+            messages.success(request, "Registro creado exitosamente.")
             # return redirect("Vehiculo:turno_de_recorrido_list")  
     else:  # GET  
         form = Turno_de_recorridoForm()  
